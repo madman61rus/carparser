@@ -236,18 +236,12 @@ $dbh = new PDO('mysql:host=localhost;dbname=Automodeli', USER, PASSWORD);
 $dbh->query("SET NAMES utf8");
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$file = fopen(FILENAME, "r");
-
 $row_cars = []; # array of cars
 $carsBodys = [];
 $enginesTypes = [];
 $manufacturers = [];
 
-while (!feof($file)) {
-
-    $row_cars[] = prepare_line(fgets($file));
-
-}
+$row_cars = file(FILENAME);
 
 filling_additional_tables($row_cars, $carsBodys, $enginesTypes, $manufacturers);
 write_data_to_additional_bd($dbh, 'CarsBody', $carsBodys);
