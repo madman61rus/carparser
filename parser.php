@@ -250,6 +250,3 @@ write_data_to_additional_bd($dbh, 'EnginesTypes', $enginesTypes);
 write_main_data($dbh, 'Cars', $row_cars);
 
 
-fclose($file);
-
-
