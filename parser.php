@@ -228,9 +228,9 @@ manufacturer,
 
 }
 
-define('USER', 'root');
-define('PASSWORD', 'coolroot');
-define('FILENAME', 'omaha.txt');
+const USER = 'root';
+const PASSWORD = 'coolroot';
+const FILENAME = 'omaha.txt';
 
 $dbh = new PDO('mysql:host=localhost;dbname=Automodeli', USER, PASSWORD);
 $dbh->query("SET NAMES utf8");
